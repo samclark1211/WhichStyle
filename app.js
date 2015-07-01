@@ -10,6 +10,8 @@ var router = express.Router();
 app.set('view engine', 'handlebars');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('views', __dirname + '/views')
+app.use(express.static(__dirname + '/public'));
+
 // apply the routes to our application
 app.get('/', index.index);
 
