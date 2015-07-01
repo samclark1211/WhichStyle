@@ -1,0 +1,29 @@
+{
+  "name": "whichstyle",
+  "version": "1.0.0",
+  "description": "WhichStyle - Static style guide generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yfaraji/WhichStyle.git"
+  },
+  "keywords": [
+    "Which",
+    "Style",
+    "Guide"
+  ],
+  "author": "Yusuf Faraji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yfaraji/WhichStyle/issues"
+  },
+  "homepage": "https://github.com/yfaraji/WhichStyle#readme",
+  "dependencies": {
+    "express": "^4.13.0",
+    "express-handlebars": "^2.0.1",
+    "mustache": "^2.1.2"
+  }
+}
