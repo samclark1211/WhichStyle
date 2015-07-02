@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/public'));
 
 // apply the routes to our application
 app.get('/', index.index);
+app.get('/guide/:guideName', index.guide);
 
 
 var server = app.listen(3000, function () {
