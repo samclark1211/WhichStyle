@@ -24,6 +24,7 @@
   "dependencies": {
     "express": "^4.13.0",
     "express-handlebars": "^2.0.1",
+    "js-yaml": "^3.3.1",
     "mustache": "^2.1.2"
   }
 }
