@@ -1,7 +1,8 @@
 var guideRenderer = require('../controllers/guiderenderer');
 
 exports.index = function(req,res){
-    res.render('home');
+    var fileList = guideRenderer.getList();
+    res.render('home', {"fileList": fileList});
 },
 
 exports.guide = function(req, res){
