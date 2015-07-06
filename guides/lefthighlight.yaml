@@ -1,0 +1,7 @@
+title: Left Highlight Class
+description: Left grey border applied - 15px thick, slight indent on the text held within it
+html: |
+  <p class="leftHighlight">
+    This is a highlighted box
+  </p>
+author: Jon Vester

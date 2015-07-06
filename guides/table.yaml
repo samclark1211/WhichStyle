@@ -1,0 +1,14 @@
+title: Generic Table
+description: Generic table with no classes applied
+html: |
+  <table>
+    <tr>
+      <th>Hello</th>
+      <th>World!</th>
+      </tr>
+      <tr>
+        <td>"cheese"</td>
+        <td>"burgers"</td>
+      </tr>
+  </table>
+author: Yusuf Faraji
