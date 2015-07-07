@@ -1,12 +1,12 @@
-html:|
-   <div class="accordionHelp">
-      <summary style="margin-bottom: 0px; padding-top: 10px; " role="button" class="helpSlider">
-          <div class="arrowDiv collapsed"></div>
-          <span style="display: -webkit-inline-box;" class="slidingHint">Click here and this slides</span>
-      </summary>
-      <div class="jsHide leftHighlight" style="display: none;">
-      </div>
-          <span>Revealing your hint text to the user - by default this is appears when javascript is disabled</span>
+html: |
+  <div class="accordionHelp">
+    <summary style="margin-bottom: 0px; padding-top: 10px; " role="button" class="helpSlider">
+        <div class="arrowDiv collapsed"></div>
+        <span style="display: -webkit-inline-box;" class="slidingHint">Click here and this slides</span>
+    </summary>
+    <div class="jsHide leftHighlight" style="display: none;">
+            <span>Revealing your hint text to the user - by default this is appears when javascript is disabled</span>
+    </div>
   </div>
 author: Yusuf Faraji
 title: Accordion Slider
