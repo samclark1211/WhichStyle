@@ -24,6 +24,9 @@ app.get('/', index.index);
 app.get('/guide/:guideName', index.guide);
 app.get('/create', index.create);
 
+app.all('*', function(req, res) {
+  res.render('404');
+});
 app.set('port', (process.env.PORT || 5000));
 
 app.listen(app.get('port'), function() {
