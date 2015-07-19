@@ -4,7 +4,6 @@
   <label><strong>Style title: </strong><br /><input type="text" id="title"/></label>
   <label><strong>Description: </strong><br /></label><textarea rows="5" cols="75" id="description"></textarea>
   <label><strong>HTML: </strong><br /></label><textarea rows="10" cols="75" id="html"></textarea>
-  <label><strong>Author:</strong><br /> <input type="text" id="author"/></label>
   <br />
 <input type="submit" value="Submit" id="button" class="button">
 </form>
@@ -22,7 +21,6 @@ jQuery(document).ready(function() {
       title: jQuery('#title').val(),
       description: jQuery('#description').val(),
       html: jQuery('#html').val(),
-      author: jQuery('#author').val()
     };
     console.log(data);
     jQuery.ajax({
