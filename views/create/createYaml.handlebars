@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
       description: jQuery('#description').val(),
       html: jQuery('#html').val(),
     };
-    console.log(data);
+
     jQuery.ajax({
       method: "POST",
       url: url,
@@ -32,7 +32,6 @@ jQuery(document).ready(function() {
         jQuery('#generatedYaml').html(result);
         jQuery('#button').attr('disabled', false);
       });
-
   });
 });
 </script>
