@@ -20,9 +20,10 @@ app.post('/create', function(req, res){
 });
 
 // apply the routes to our application
-app.get('/', index.index);
-app.get('/guide/:guideName', index.guide);
+
 app.get('/create', index.create);
+app.get('/', index.index);
+app.get('/guide/:nextdirectory', index.index);
 
 app.all('*', function(req, res) {
   res.render('404');

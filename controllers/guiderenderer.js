@@ -4,30 +4,50 @@ var folderPath = "./guides"
 
 
 module.exports = {
-  transform: function (fileName) {
+  //Todo: Use funct to determine file/folder :: DRY this up
+  getFiles : function(pathToFile) {
     try {
-      var fileContents = fs.readFileSync(
-        folderPath + '/' + fileName + '.yaml',
-        { encoding: 'utf8' }
-      );
-    return parser.safeLoad(fileContents);
-  } catch(e) {
-    console.error("Badly typed YAML");
-    console.error("Offending file: " + fileName)
-  }
-
+      var path = folderPath + '/' + pathToFile || folderPath;
+      var directoryContents = fs.readdirSync(path);
+      var parsedFiles = [];
+      directoryContents.forEach(function (f) {
+        var filePath = path + "/" +f;
+        var stats = fs.statSync(filePath);
+        if (stats.isFile()) {
+          parsedFiles.push(transform(path+"/"+f));
+        }
+      });
+      return parsedFiles;
+    } catch (e) {
+      console.log("Failure to parse file list :~")
+    }
   },
 
-  getList : function() {
+
+  getFolders : function(pathToFile) {
     try {
-      var fileList = fs.readdirSync(folderPath)
-      var fileNames = [];
-      for (var i =0 ; i < fileList.length ; i++) {
-        fileNames.push(fileList[i].replace(/\..*$/,""));
-      }
-      return fileNames;
+      var path = folderPath + '/' + pathToFile || folderPath;
+      var directoryList = fs.readdirSync(path);
+      var folderNames = [];
+      directoryList.forEach(function(f) {
+        var stat = fs.statSync(path + "/" + f);
+        if (stat.isDirectory()) folderNames.push(f.replace(/\..*$/, ""));
+      });
+
+      return folderNames;
     } catch(e) {
       console.error("Folder missing");
     }
   }
+};
+
+function transform (fileName) {
+  try {
+    var fileContents = fs.readFileSync(fileName, { encoding: 'utf8' });
+  return parser.safeLoad(fileContents);
+} catch(e) {
+  console.error("Badly typed YAML");
+  console.error("Offending file: " + fileName)
+}
+
 };

@@ -1,8 +1,13 @@
 var guideRenderer = require('../controllers/guiderenderer');
 
 exports.index = function(req,res){
-    var fileList = guideRenderer.getList();
-    res.render('home', {"fileList": fileList});
+    var sectionToWalk = req.params.nextdirectory || "";
+    var folderList = guideRenderer.getFolders(sectionToWalk);
+    var fileList = guideRenderer.getFiles(sectionToWalk)
+    res.render('home', {
+      "folderList": folderList,
+      "fileList": fileList
+    });
 },
 
 exports.create = function(req, res) {

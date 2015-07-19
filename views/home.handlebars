@@ -3,5 +3,22 @@
 <h2>Styles</h2>
 <div style="width:100%;"><span style="float:right;"><a href="/create">Add new style</a></span></div>
 <br />
-{{#fileList}}<div style="width: 20%; float:left;"><a href="/guide/{{.}}">{{.}}</a></div> {{/fileList}}
-{{^fileList}}No styles currently available{{/fileList}}
+{{#folderList}}<div style="width: 20%; float:left;"><a href="/guide/{{.}}">{{.}}</a></div> {{/folderList}}
+{{#fileList}}
+<br />
+<header class="page-header">
+  <h3>{{title}}</h3>
+</header>
+
+{{{html}}}
+<br />
+<br >
+
+{{description}}<br/>
+<pre>{{html}}</pre>
+{{/fileList}}
+{{^folderList}}
+  {{^fileList}}
+    No styles currently available
+  {{/fileList}}
+{{/folderList}}

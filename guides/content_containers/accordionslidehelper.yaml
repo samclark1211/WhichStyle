@@ -8,6 +8,5 @@ html: |
             <span>Revealing your hint text to the user - by default this is appears when javascript is disabled</span>
     </div>
   </div>
-author: Yusuf Faraji
 title: Accordion Slider
 description: Accordion sliding box which reveals hint text with a left highlight
