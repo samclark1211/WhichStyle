@@ -31,7 +31,12 @@ module.exports = {
       var folderNames = [];
       directoryList.forEach(function(f) {
         var stat = fs.statSync(path + "/" + f);
-        if (stat.isDirectory()) folderNames.push(f.replace(/\..*$/, ""));
+        if (stat.isDirectory()) {
+          var folderDetails = {};
+          folderDetails.name=f.replace(/\_/, " ");
+          folderDetails.link=f;
+          folderNames.push(folderDetails);
+        }
       });
 
       return folderNames;

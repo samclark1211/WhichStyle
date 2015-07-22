@@ -3,7 +3,9 @@
 <h2>Styles</h2>
 <div style="width:100%;"><span style="float:right;"><a href="/create">Add new style</a></span></div>
 <br />
-{{#folderList}}<div style="width: 20%; float:left;"><a href="/guide/{{.}}">{{.}}</a></div> {{/folderList}}
+{{#folderList}}<div  style="width: 20%; float:left;">
+  <a class="linkStyle" href="/guide/{{link}}">{{name}}</a>
+</div> {{/folderList}}
 {{#fileList}}
 <br />
 <header class="page-header">
